@@ -7,7 +7,11 @@ find = |array, value|
             (x, y) if x == y ->
                 array
                 |> List.get x
-                |> Result.try |v| if v == value then Ok x else Err Oops
+                |> Result.try |v|
+                    if v == value then
+                        Ok x
+                    else
+                        Err Oops
 
             _ ->
                 (low + high)
