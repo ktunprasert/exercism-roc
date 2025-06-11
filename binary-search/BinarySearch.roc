@@ -23,9 +23,7 @@ find = |array, value|
                         |v|
                             if v == value then
                                 Ok mid
-                            else if
-                                v < value
-                            then
+                            else if v < value then
                                 f (mid + 1) high
                             else
                                 f low (mid - 1)
