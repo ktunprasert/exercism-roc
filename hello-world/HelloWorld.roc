@@ -1,4 +1,4 @@
 module [hello]
 
 hello : Str
-hello = "Goodbye, Mars!"
+hello = "Hello, World!"
