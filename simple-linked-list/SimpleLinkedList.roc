@@ -40,9 +40,8 @@ pop = |linked_list|
         Node({ value, next }) ->
             Result.map_ok(
                 pop(next),
-                |n| { value: value, linked_list: n.linked_list },
+                |n| { value: n.value, linked_list: Node({ value: value, next: n.linked_list }) },
             )
-            |> dbg
 
 expect [1] |> from_list |> pop == Ok({ value: 1, linked_list: None })
 expect [1, 2] |> from_list |> pop == Ok({ value: 2, linked_list: Node({ value: 1, next: None }) })
