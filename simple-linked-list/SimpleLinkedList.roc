@@ -1,9 +1,6 @@
 module [from_list, to_list, push, pop, reverse, len]
 
-SimpleLinkedList : [
-    None,
-    Node { value : U64, next : SimpleLinkedList },
-]
+SimpleLinkedList : [None, Node { value : U64, next : SimpleLinkedList }]
 
 from_list : List U64 -> SimpleLinkedList
 from_list = |list| list |> List.walk(None, |node, n| push(node, n))
