@@ -41,38 +41,38 @@ expect
     expected = Ok(789)
     result == expected
 
-# # the last element should be gone after pop
-# expect
-#     pop_result = [123, 456, 789] |> from_list |> pop
-#     result = pop_result |> Result.try(|popped| Ok((popped.linked_list |> to_list)))
-#     expected = Ok([123, 456])
-#     result == expected
+# the last element should be gone after pop
+expect
+    pop_result = [123, 456, 789] |> from_list |> pop
+    result = pop_result |> Result.try(|popped| Ok((popped.linked_list |> to_list)))
+    expected = Ok([123, 456])
+    result == expected
 
-# # cannot pop an empty linked list
-# expect
-#     result = [] |> from_list |> pop
-#     result |> Result.is_err
+# cannot pop an empty linked list
+expect
+    result = [] |> from_list |> pop
+    result |> Result.is_err
 
-# # can reverse a linked list
-# expect
-#     result = [123, 456, 789] |> from_list |> reverse |> to_list
-#     expected = [789, 456, 123]
-#     result == expected
+# can reverse a linked list
+expect
+    result = [123, 456, 789] |> from_list |> reverse |> to_list
+    expected = [789, 456, 123]
+    result == expected
 
-# # can reverse an empty linked list and it's still empty
-# expect
-#     result = [] |> from_list |> reverse |> to_list
-#     expected = []
-#     result == expected
+# can reverse an empty linked list and it's still empty
+expect
+    result = [] |> from_list |> reverse |> to_list
+    expected = []
+    result == expected
 
-# # can get the length of a linked list
-# expect
-#     result = [123, 456, 789] |> from_list |> len
-#     expected = 3
-#     result == expected
+# can get the length of a linked list
+expect
+    result = [123, 456, 789] |> from_list |> len
+    expected = 3
+    result == expected
 
-# # can get the length of an empty linked list
-# expect
-#     result = [] |> from_list |> len
-#     expected = 0
-#     result == expected
+# can get the length of an empty linked list
+expect
+    result = [] |> from_list |> len
+    expected = 0
+    result == expected
